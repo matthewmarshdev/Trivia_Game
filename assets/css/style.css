@@ -5,3 +5,18 @@ font-family: 'Abril Fatface', cursive;*/
 html, body{
 	background-color: 	#111111;
 }
+
+button{
+	color: grey; 
+	font-family: 'Playfair Display', serif; font-size: 30px;
+}
+
+#question{
+	color: white;
+	 font-family: 'Playfair Display', serif; font-size: 30px;
+}
+
+.answer{
+	color: white;
+	 font-family: 'Playfair Display', serif; font-size: 30px;
+}
