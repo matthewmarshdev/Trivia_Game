@@ -24,6 +24,8 @@ else the timer runs out, and a negative message displays
 the player moves to next question automatically after positive 
 or negative message **/
 
+$(document).ready(function(){
+
 var questionsAndAnswers = [
 	{
 	'question1': 'Which final fantasy debuted in 1997?', 
@@ -79,19 +81,17 @@ $score = $('.score')
 counter = 0;
 score = 0;
 
-$('.answer4').append(questionsAndAnswers[0].Answer4);
-console.log(questionsAndAnswers[0].answer4);
 
 
-trekApp.init = function() {
-  var selection = questionsAndAnswers[0];
-  type = selection["answer"];
-  $question.html(questionsAndAnswers["question1"]);
-  $generate.hide();
-  $result.hide();
-  $score.hide();
-  $thanks.hide();
-}
+
+$("#start").on("click", function() {
+$('.question').append(questionsAndAnswers[0].question1);
+$('.answer1').append(questionsAndAnswers[0].answer1X);
+$('.answer2').append(questionsAndAnswers[0].answer2);
+$('.answer3').append(questionsAndAnswers[0].answer3);
+$('.answer4').append(questionsAndAnswers[0].answer4);
+$("#start").hide();
+});
 
 
 
@@ -105,12 +105,13 @@ function calculateScore(){
 
 };
 
-function startGame(displayQuestion){
+/**function startGame(displayQuestion){
 
 	$("#start").click();
 	displayscore();
 	displayquestion();
 
 
-};
+};**/
 
+});
