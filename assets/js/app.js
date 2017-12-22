@@ -44,28 +44,28 @@ var questionsAndAnswers = [
 	'answer1X': 'Troll Meme In Pillar of Autumn Message board',
 	'answer2': 'Grunt headshots make screaming noise',
 	'answer3': 'Elites hugged each other at end',
-	'Answer4': 'Chief curses if his gun is jammed'
+	'answer4': 'Chief curses if his gun is jammed'
 	},
 	{
-	'question: 'What do you get from the secret gnome house in year 1 of Harvest Moon?', 
+	'question': 'What do you get from the secret gnome house in year 1 of Harvest Moon?', 
 	'answer1': 'Golden Hoe',
 	'answer2X': 'Golden Sickle',
 	'answer3': 'Golden Axe',
-	'Answer4': 'Golden Sprinkler'
+	'answer4': 'Golden Sprinkler'
 	},
 	{
 	'question': 'How many flutes do you need to skip to work 8 from world 1 in Super Mario Brothers 3?', 
 	'answer1': '1',
 	'answer2X': '2',
 	'answer3': '3',
-	'Answer4': '4'
+	'answer4': '4'
 	},
 	{
 	'question': 'Who is Links Nemesis?', 
 	'answer1': 'Ganon',
 	'answer2': 'Bowser',
 	'answer3': 'Final Fantasy Tactics',
-	'Answer4': 'Final Fantasy V'
+	'answer4': 'Final Fantasy V'
 	}
 ];
 
@@ -79,16 +79,19 @@ $score = $('.score')
 counter = 0;
 score = 0;
 
+$('.answer4').append(questionsAndAnswers[0].Answer4);
+console.log(questionsAndAnswers[0].answer4);
 
 
-function displayQusetion(){
-	$('.question').html(questionsAndAnswers[0].question1)
-	$('.answer1').html(questionsAndAnswers[0].answer1X);
-	$('.answer2').show(questionsAndAnswers[0].answer2);
-	$('.answer3').add(questionsAndAnswers[0].answer3);
-	$('.answer4').append(questionsAndAnswers[0].Answer4);
-
-};
+trekApp.init = function() {
+  var selection = questionsAndAnswers[0];
+  type = selection["answer"];
+  $question.html(questionsAndAnswers["question1"]);
+  $generate.hide();
+  $result.hide();
+  $score.hide();
+  $thanks.hide();
+}
 
 
 
@@ -102,9 +105,9 @@ function calculateScore(){
 
 };
 
-function startGame(){
+function startGame(displayQuestion){
 
-	$("#start").click(startGame);
+	$("#start").click();
 	displayscore();
 	displayquestion();
 
